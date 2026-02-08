@@ -79,8 +79,32 @@
 # Use `Model.destroy_all` code.
 # TODO!
 
+Studio.destroy_all
+Movie.destroy_all
+Actor.destroy_all
+Role.destroy_all
+Agent.destroy_all
+
 # Generate models and tables, according to the domain model.
 # TODO!
+
+class Studio < ApplicationRecord
+  create_table :studios do |t|
+  end
+end
+
+class Movie < ApplicationRecord
+  create_table :movie do |t|
+    t.string "title"
+    t.integer "year_released"
+    t.string "rated"
+    t.integer "studio_id"
+  end
+end
+
+class Actor < ApplicationRecord
+  
+end
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
