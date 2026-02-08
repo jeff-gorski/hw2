@@ -94,7 +94,7 @@ class Studio < ApplicationRecord
 end
 
 class Movie < ApplicationRecord
-  create_table :movie do |t|
+  create_table :movies do |t|
     t.string "title"
     t.integer "year_released"
     t.string "rated"
@@ -103,12 +103,32 @@ class Movie < ApplicationRecord
 end
 
 class Actor < ApplicationRecord
-  
+  create_table :actors do |t|
+    t.integer "agent_id"
+  end
 end
+
+class Role < ApplicationRecord
+  create_table :roles do |t|
+    t.integer "movie_id"
+    t.integer "actor_id"
+    t.string "character_name"
+  end
+end
+
+class Agent < ApplicationRecord
+  create_table :agents do |t|
+    t.string "name"
+  end
+end
+
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
 # TODO!
+
+
+
 
 # Prints a header for the movies output
 puts "Movies"
