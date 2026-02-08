@@ -127,7 +127,8 @@ end
 # Do not use hard-coded foreign key IDs.
 # TODO!
 
-
+new_studio = Studio.new
+new_studio["name"] = "Warner Bros."
 
 
 # Prints a header for the movies output
